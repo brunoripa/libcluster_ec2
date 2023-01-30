@@ -14,6 +14,9 @@ defmodule ClusterEC2 do
       {:ok, %{status: 200, body: body}} -> body
       _ -> ""
     end
+  rescue
+    _ ->
+      ""
   end
 
   @doc """
@@ -25,5 +28,8 @@ defmodule ClusterEC2 do
       {:ok, %{status: 200, body: body}} -> String.slice(body, 0..-2)
       _ -> ""
     end
+  rescue
+    _ ->
+      ""
   end
 end
